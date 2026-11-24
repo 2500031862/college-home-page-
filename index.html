@@ -1,17 +1,170 @@
-<header>
-  <h1>Student Portal</h1>
-  <nav>
-    <ul>
-      <li><a href="#courses">Courses</a></li>
-      <li><a href="#attendance">Attendance</a></li>
-      <li><a href="#cgpa">CGPA</a></li>
-      <li><a href="#exams">Exams</a></li>
-    </ul>
-  </nav>
-</header><section id="courses">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal - College Home Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1e3a8a;
+      color: #fff;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.4rem 0.7rem;
+      border-radius: 5px;
+      transition: background 0.2s;
+    }
+
+    nav a:hover {
+      background-color: #2563eb;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      background: #fff;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      scroll-margin-top: 80px;
+    }
+
+    h2 {
+      color: #1e3a8a;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.5rem;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.5rem;
+    }
+
+    th, td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    th {
+      background-color: #eff6ff;
+      color: #1e3a8a;
+      font-weight: 600;
+    }
+
+    tr:hover {
+      background-color: #f9fafb;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: #eff6ff;
+      padding: 1.2rem;
+      border-radius: 8px;
+      border-left: 4px solid #2563eb;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      color: #374151;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #1e3a8a;
+    }
+
+    .badge-ok {
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.25rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.2rem;
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Student Portal</h1>
+    <nav>
+      <ul>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#attendance">Attendance</a></li>
+        <li><a href="#cgpa">CGPA</a></li>
+        <li><a href="#exams">Exams</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Courses Section -->
+    <section id="courses">
       <h2>Course Details</h2>
       <div class="table-container">
-        <table border="1">
+        <table>
           <thead>
             <tr>
               <th>Course Name</th>
@@ -49,3 +202,92 @@
         </table>
       </div>
     </section>
+
+    <!-- Attendance Section -->
+    <section id="attendance">
+      <h2>Attendance Summary</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Overall Attendance</h3>
+          <p>88.75%</p>
+        </div>
+        <div class="card">
+          <h3>Classes Attended</h3>
+          <p>142 / 160</p>
+        </div>
+        <div class="card">
+          <h3>Eligibility Status</h3>
+          <p><span class="badge-ok">Eligible for Exams</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CGPA Section -->
+    <section id="cgpa">
+      <h2>Academic Performance (CGPA)</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Current CGPA</h3>
+          <p>8.89 / 10</p>
+        </div>
+        <div class="card">
+          <h3>Total Credits Earned</h3>
+          <p>14</p>
+        </div>
+        <div class="card">
+          <h3>Academic Standing</h3>
+          <p>First Class with Distinction</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Exams Section -->
+    <section id="exams">
+      <h2>Upcoming Exam Schedule</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Course Name</th>
+              <th>Exam Type</th>
+              <th>Date</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Web Development</td>
+              <td>End Semester</td>
+              <td>2026-12-02</td>
+              <td>09:30 AM - 12:30 PM</td>
+            </tr>
+            <tr>
+              <td>Data Structures</td>
+              <td>End Semester</td>
+              <td>2026-12-05</td>
+              <td>09:30 AM - 12:30 PM</td>
+            </tr>
+            <tr>
+              <td>Operating Systems</td>
+              <td>End Semester</td>
+              <td>2026-12-08</td>
+              <td>09:30 AM - 12:30 PM</td>
+            </tr>
+            <tr>
+              <td>Computer Networks</td>
+              <td>End Semester</td>
+              <td>2026-12-11</td>
+              <td>09:30 AM - 12:30 PM</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Student Portal | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
